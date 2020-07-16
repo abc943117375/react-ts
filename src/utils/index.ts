@@ -25,7 +25,7 @@ export function v(val1: number | string, val2?: number | string, val3?: number |
 }
 
 export function debounce(fn: any, wait: number): () => void {
-  let timerId: NodeJS.Timer | null = null
+  let timerId: null | number
   let result: () => void
   return () => {
     if (timerId) {
@@ -40,7 +40,7 @@ export function debounce(fn: any, wait: number): () => void {
 }
 
 export function throttle(fn: any, wait: number): () => void {
-  let timer: NodeJS.Timer | null = null
+  let timer: null | number
   return () => {
     if (!timer) {
       timer = setTimeout(() => {

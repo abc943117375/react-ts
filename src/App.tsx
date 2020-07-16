@@ -4,6 +4,7 @@ import API from './plugins/api'
 import store from './store'
 import routes from './routes'
 import FrontendAuth from './views/FrontendAuth'
+import './assets/styles/app.css'
 //       哈希路由     路由    独享路由 重定向路由  跳转链接
 import { HashRouter, Route, Switch, Redirect, Link } from 'react-router-dom'
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
 }
 function App() {
   (window as any).API = API
+  console.log('开始咯');
   return (
     <Provider store={store}>
       <HashRouter>
